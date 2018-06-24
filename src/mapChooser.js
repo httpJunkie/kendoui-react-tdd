@@ -1,4 +1,5 @@
 function mapChooser(locationName) {
+  // pure function!
   if (!locationName) {
     locationName = "none";
   }
