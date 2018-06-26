@@ -1,12 +1,12 @@
 {
   "shops": [
     {
-      "location": "Portland",
-      "address": "123 Portland Dr."
+      "location": "Orlando",
+      "address": "2121 Falling Tree Cir"
     },
     {
-      "location": "Astoria",
-      "address": "123 Astoria Dr."
+      "location": "Fremont",
+      "address": "405 Rancho Arroyo Pkwy"
     }
   ]
 }

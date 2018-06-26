@@ -8,9 +8,9 @@ describe("App", function () {
     let mountedApp = shallow(<App />);
   });
 
-  it('renders a StoreLocator', () => {
+  it('renders a MyLocations', () => {
     let mountedApp = shallow(<App />);
-    const locators = mountedApp.find('StoreLocator');
+    const locators = mountedApp.find('MyLocations');
     expect(locators.length).toBe(1);
   })
 

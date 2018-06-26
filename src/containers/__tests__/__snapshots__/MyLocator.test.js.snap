@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StoreLocator renders correctly 1`] = `
+exports[`MyLocations renders correctly 1`] = `
 <div>
   <div
     className="Header"
   >
     <img
-      alt="Wired Brain"
-      src="images/wired-brain-coffee-logo.png"
+      alt="Eric Bishard"
+      src="images/ebishard.png"
     />
   </div>
   <div />

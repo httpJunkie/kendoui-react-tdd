@@ -1,36 +1,36 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import StoreLocator from '../StoreLocator';
+import MyLocations from '../MyLocations';
 import axios from 'axios';
 import renderer from 'react-test-renderer';
 
-describe("StoreLocator", function () {
+describe("MyLocations", function () {
 
-    let mountedStoreLocator;
+    let mountedMyLocations;
     beforeEach(() => {
-        mountedStoreLocator = shallow(<StoreLocator />);
+        mountedMyLocations = shallow(<MyLocations />);
     });
 
     it('renders correctly', ()=>{
-        const tree = renderer.create(<StoreLocator />).toJSON();
+        const tree = renderer.create(<MyLocations />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 
     it('calls axios.get in #componentDidMount', ()=>{
-        return mountedStoreLocator.instance().componentDidMount().then(()=>{
+        return mountedMyLocations.instance().componentDidMount().then(()=>{
             expect(axios.get).toHaveBeenCalled();
         })
     });
 
     it('calls axios.get with correct url', ()=>{
-        return mountedStoreLocator.instance().componentDidMount().then(()=>{
+        return mountedMyLocations.instance().componentDidMount().then(()=>{
             expect(axios.get).toHaveBeenCalledWith('http://localhost:3000/data/shops.json');
         })
     });
 
     it('updates state with api data', () => {
-        return mountedStoreLocator.instance().componentDidMount().then(()=> {
-          expect(mountedStoreLocator.state()).toHaveProperty('shops',
+        return mountedMyLocations.instance().componentDidMount().then(()=> {
+          expect(mountedMyLocations.state()).toHaveProperty('shops',
               [{
                   "location": "test location",
                   "address" : "test address"
@@ -40,26 +40,26 @@ describe("StoreLocator", function () {
         });
 
     it('renders without crashing', () => {
-        let mountedStoreLocator = shallow(<StoreLocator />);
+        let mountedMyLocations = shallow(<MyLocations />);
     });
 
     it('renders a header', () => {
-        const headers = mountedStoreLocator.find('Header');
+        const headers = mountedMyLocations.find('Header');
         expect(headers.length).toBe(1);
     });
 
 
     it('renders a map', () => {
-        const maps = mountedStoreLocator.find('Map');
+        const maps = mountedMyLocations.find('Map');
         expect(maps.length).toBe(1);
     })
 });
 
 describe('chooseMap', ()=> {
     it('updates this.state.currentMap using the location passed to it', ()=>{
-        let mountedStoreLocator = shallow(<StoreLocator />);
+        let mountedMyLocations = shallow(<MyLocations />);
         let mockEvent = {target:{value:'testland'}};
-        mountedStoreLocator.instance().chooseMap(mockEvent);
-        expect(mountedStoreLocator.instance().state.currentMap).toBe('testland.png');
+        mountedMyLocations.instance().chooseMap(mockEvent);
+        expect(mountedMyLocations.instance().state.currentMap).toBe('testland.png');
     })
 });

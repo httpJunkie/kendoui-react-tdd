@@ -5,7 +5,7 @@ import Map from '../components/Map';
 import mapChooser from '../mapChooser';
 import axios from 'axios';
 
-class StoreLocator extends Component {
+class MyLocations extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,4 +43,4 @@ class StoreLocator extends Component {
   }
 }
 
-export default StoreLocator;
+export default MyLocations;
