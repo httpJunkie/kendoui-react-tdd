@@ -28,14 +28,14 @@ class MyLocations extends Component {
 
   render() {
 
-    let storeButtons = this.state.shops.map((shop, id) => {
+    let locationsLived = this.state.shops.map((shop, id) => {
       return (<Button handleClick={this.chooseMap} key={id} location={shop.location} />)
     });
 
     return (<div>
       <Header />
       <div>
-        {storeButtons}
+        {locationsLived}
       </div>
       <Map imagename={this.state.currentMap} location={this.props.location} />
     </div>
