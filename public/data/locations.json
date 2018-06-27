@@ -1,11 +1,11 @@
 {
-  "shops": [
+  "locations": [
     {
-      "location": "Orlando",
+      "city": "Orlando",
       "address": "2121 Falling Tree Cir"
     },
     {
-      "location": "Fremont",
+      "city": "Fremont",
       "address": "405 Rancho Arroyo Pkwy"
     }
   ]

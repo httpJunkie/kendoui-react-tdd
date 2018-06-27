@@ -10,15 +10,15 @@ class MyLocations extends Component {
     super(props);
     this.state = {
       currentMap: 'none.png',
-      shops: []
+      locations: []
     };
     this.chooseMap = this.chooseMap.bind(this);
   }
 
   async componentDidMount() {
-    let response = await axios.get('http://localhost:3000/data/shops.json');
+    let response = await axios.get('http://localhost:3000/data/locations.json');
     this.setState({
-      shops: response.data.shops
+      locations: response.data.locations
     })
   }
 
@@ -27,18 +27,18 @@ class MyLocations extends Component {
   }
 
   render() {
-
-    let locationsLived = this.state.shops.map((shop, id) => {
-      return (<Button handleClick={this.chooseMap} key={id} location={shop.location} />)
+    let locationsLived = this.state.locations.map((location, id) => {
+      return (<Button handleClick={this.chooseMap} key={id} city={location.city} />)
     });
 
-    return (<div>
-      <Header />
+    return (
       <div>
-        {locationsLived}
+        <Header />
+        <div>
+          {locationsLived}
+        </div>
+        <Map imagename={this.state.currentMap} location={this.props.location} />
       </div>
-      <Map imagename={this.state.currentMap} location={this.props.location} />
-    </div>
     );
   }
 }

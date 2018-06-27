@@ -26,33 +26,33 @@ describe("Button", function () {
   });
 });
 
-describe("When a location is passed to it", () => {
+describe("When a city is passed to it", () => {
   let mountedButton;
   let props;
 
   beforeEach(() => {
-    props = { location: "Cocoa Beach" };
+    props = { city: "Cocoa Beach" };
     mountedButton = shallow(<Button {...props} />);
   });
 
-  it('displays the location', () => {
-    const locName = mountedButton.find('.location-button');
+  it('displays the city', () => {
+    const locName = mountedButton.find('.city-button');
     expect(locName.text()).toEqual('Cocoa Beach');
   });
 });
 
-describe("When a location is passed as undefined", () => {
+describe("When a city is passed as undefined", () => {
   let mountedButton;
   let props;
 
   beforeEach(() => {
-    props = { location: undefined };
+    props = { city: undefined };
     mountedButton = shallow(<Button {...props} />);
   });
 
-  it('displays the location', () => {
-    const locName = mountedButton.find('.location-button');
-    expect(locName.text()).toEqual('All Locations');
+  it('displays the city', () => {
+    const locName = mountedButton.find('.city-button');
+    expect(locName.text()).toEqual('All citys');
   });
 
 });

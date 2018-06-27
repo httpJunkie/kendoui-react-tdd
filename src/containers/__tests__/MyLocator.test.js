@@ -24,15 +24,15 @@ describe("MyLocations", function () {
 
   it('calls axios.get with correct url', () => {
     return mountedMyLocations.instance().componentDidMount().then(() => {
-      expect(axios.get).toHaveBeenCalledWith('http://localhost:3000/data/shops.json');
+      expect(axios.get).toHaveBeenCalledWith('http://localhost:3000/data/locations.json');
     })
   });
 
   it('updates state with api data', () => {
-    return mountedMyLocations.instance().componentDidMount().then(() => {
-      expect(mountedMyLocations.state()).toHaveProperty('shops',
+    return mountedMyCities.instance().componentDidMount().then(() => {
+      expect(mountedMyCities.state()).toHaveProperty('locations',
         [{
-          "location": "test location",
+          "city": "test city",
           "address": "test address"
         }]
       );
@@ -56,7 +56,7 @@ describe("MyLocations", function () {
 });
 
 describe('chooseMap', () => {
-  it('updates this.state.currentMap using the location passed to it', () => {
+  it('updates this.state.currentMap using the city passed to it', () => {
     let mountedMyLocations = shallow(<MyLocations />);
     let mockEvent = { target: { value: 'testland' } };
     mountedMyLocations.instance().chooseMap(mockEvent);

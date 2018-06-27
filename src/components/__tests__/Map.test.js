@@ -9,7 +9,7 @@ describe("Map",function(){
 
     beforeEach(()=>{
         props = {
-            location:undefined,
+            city: undefined,
             imagename: 'testmap.png'
         };
         mountedMap = shallow(<Map {...props} />);

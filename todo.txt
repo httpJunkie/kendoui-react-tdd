@@ -1,5 +1,5 @@
-There should be a button for each location
-Each button should display the name of the location
+There should be a button for each city
+Each button should display the name of the city
 There should be a map
 There should be a header above the buttons
 Clicking a button passes a value to a function
