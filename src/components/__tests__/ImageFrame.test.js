@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Map from '../Map';
+import ImageFrame from '../ImageFrame';
 
 
-describe("Map", function () {
+describe("ImageFrame", function () {
   let mountedMap;
   let props;
 
@@ -12,11 +12,11 @@ describe("Map", function () {
       city: undefined,
       imagename: 'testmap.png'
     };
-    mountedMap = shallow(<Map {...props} />);
+    mountedMap = shallow(<ImageFrame {...props} />);
   });
 
   it('renders without crashing', () => {
-    shallow(<Map />);
+    shallow(<ImageFrame />);
   });
 
   it('contains a image', () => {
@@ -25,7 +25,7 @@ describe("Map", function () {
   });
 
   it('displays the none map when no params are given', () => {
-    let defaultMap = shallow(<Map />);
+    let defaultMap = shallow(<ImageFrame />);
     const defaultImage = defaultMap.find('img [src="images/none.png"]');
     expect(defaultImage.length).toBe(1);
   });

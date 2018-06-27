@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Button from '../components/Button';
-import Map from '../components/Map';
+import ImageFrame from '../components/ImageFrame';
 import mapChooser from '../mapChooser';
 import axios from 'axios';
 
@@ -37,7 +37,7 @@ class MyLocations extends Component {
         <div>
           {locationsLived}
         </div>
-        <Map imagename={this.state.currentMap} location={this.props.location} />
+        <ImageFrame imagename={this.state.currentMap} location={this.props.location} />
       </div>
     );
   }
