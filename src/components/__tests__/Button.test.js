@@ -31,28 +31,22 @@ describe("When a location is passed to it", () => {
   let props;
 
   beforeEach(() => {
-    props = {
-      location: "Location1"
-    };
-
+    props = { location: "Cocoa Beach" };
     mountedButton = shallow(<Button {...props} />);
   });
 
   it('displays the location', () => {
     const locName = mountedButton.find('.location-button');
-    expect(locName.text()).toEqual('Location1');
+    expect(locName.text()).toEqual('Cocoa Beach');
   });
 });
 
-describe("When a location is passed to it", () => {
+describe("When a location is passed as undefined", () => {
   let mountedButton;
   let props;
 
   beforeEach(() => {
-    props = {
-      location: undefined
-    };
-
+    props = { location: undefined };
     mountedButton = shallow(<Button {...props} />);
   });
 
@@ -60,8 +54,5 @@ describe("When a location is passed to it", () => {
     const locName = mountedButton.find('.location-button');
     expect(locName.text()).toEqual('All Locations');
   });
-
-
-
 
 });
