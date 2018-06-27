@@ -52,7 +52,7 @@ describe("When a city is passed as undefined", () => {
 
   it('displays the city', () => {
     const locName = mountedButton.find('.city-button');
-    expect(locName.text()).toEqual('All citys');
+    expect(locName.text()).toEqual('All cities');
   });
 
 });

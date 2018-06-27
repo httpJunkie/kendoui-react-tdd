@@ -11,8 +11,13 @@ exports[`MyLocations renders correctly 1`] = `
     />
   </div>
   <div />
-  <div className="MapBox">
-    <img alt={undefined} src="images/none.png" />
+  <div
+    className="MapBox"
+  >
+    <img
+      alt={undefined}
+      src="images/none.png"
+    />
   </div>
 </div>
 `;

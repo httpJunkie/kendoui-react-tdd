@@ -29,8 +29,8 @@ describe("MyLocations", function () {
   });
 
   it('updates state with api data', () => {
-    return mountedMyCities.instance().componentDidMount().then(() => {
-      expect(mountedMyCities.state()).toHaveProperty('locations',
+    return mountedMyLocations.instance().componentDidMount().then(() => {
+      expect(mountedMyLocations.state()).toHaveProperty('locations',
         [{
           "city": "test city",
           "address": "test address"
@@ -40,7 +40,7 @@ describe("MyLocations", function () {
   });
 
   it('renders without crashing', () => {
-    let mountedMyLocations = shallow(<MyLocations />);
+    shallow(<MyLocations />);
   });
 
   it('renders a header', () => {

@@ -3,7 +3,7 @@ let mockResponse = {
   data: {
     "locations": [
       {
-        "location": "test location",
+        "city": "test city",
         "address": "test address"
       }
     ]
