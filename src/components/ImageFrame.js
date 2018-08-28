@@ -8,9 +8,11 @@ class Map extends Component {
         ? this.props.imagename
         : 'none.png'
     );
-    return (<div className="MapBox">
-      <img src={imagePath} alt={this.props.city} />
-    </div>);
+    return (
+      <div className="mapBox">
+        <img src={imagePath} alt={this.props.city} />
+      </div>
+    );
   }
 }
 

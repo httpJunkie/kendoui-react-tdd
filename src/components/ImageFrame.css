@@ -1,3 +1,6 @@
-.MapBox > img {
+.mapBox > img {
   width: 480px;
+}
+.mapBox {
+  margin-top: 2em;
 }
