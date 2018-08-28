@@ -1,0 +1,28 @@
+/* 
+  This will give us a 12 central column grid with a maximum width of 100px, 
+  a flexible column on either side, and a gap of 20px between each column. 
+ */
+
+.grid {
+  display: grid;
+  grid-template-columns: 
+    minmax(20px, 1fr) repeat(12, minmax(0, 100px)) minmax(20px, 1fr);
+  grid-column-gap: 20px;
+}
+
+.grid__left {
+  grid-column: 2 / 9; /* Start on Column 2 and end at the start of Column 9 */
+}
+
+.grid__right {
+  grid-column: 9 / 14; /* Start on Column 9 and end at the start of Column 14 */
+}
+
+.grid__left,
+.grid__right {
+  grid-row: 1; /* We want to keep our items on the same row */
+}
+
+.grid__right p {
+  margin-top: 2em;
+}

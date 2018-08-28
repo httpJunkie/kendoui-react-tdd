@@ -1,36 +1,36 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import MyLocations from '../MyLocations';
+import Conferences from '../Conferences';
 import axios from 'axios';
 import renderer from 'react-test-renderer';
 
-describe("MyLocations", function () {
+describe("Conferences", function () {
 
-  let mountedMyLocations;
+  let mountedConferences;
   beforeEach(() => {
-    mountedMyLocations = shallow(<MyLocations />);
+    mountedConferences = shallow(<Conferences />);
   });
 
   it('renders correctly', () => {
-    const tree = renderer.create(<MyLocations />).toJSON();
+    const tree = renderer.create(<Conferences />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('calls axios.get in #componentDidMount', () => {
-    return mountedMyLocations.instance().componentDidMount().then(() => {
+    return mountedConferences.instance().componentDidMount().then(() => {
       expect(axios.get).toHaveBeenCalled();
     })
   });
 
   it('calls axios.get with correct url', () => {
-    return mountedMyLocations.instance().componentDidMount().then(() => {
-      expect(axios.get).toHaveBeenCalledWith('http://localhost:3000/data/locations.json');
+    return mountedConferences.instance().componentDidMount().then(() => {
+      expect(axios.get).toHaveBeenCalledWith('http://localhost:3000/data/conferences.json');
     })
   });
 
   it('updates state with api data', () => {
-    return mountedMyLocations.instance().componentDidMount().then(() => {
-      expect(mountedMyLocations.state()).toHaveProperty('locations',
+    return mountedConferences.instance().componentDidMount().then(() => {
+      expect(mountedConferences.state()).toHaveProperty('conferences',
         [{
           "city": "test city",
           "address": "test address"
@@ -40,26 +40,26 @@ describe("MyLocations", function () {
   });
 
   it('renders without crashing', () => {
-    shallow(<MyLocations />);
+    shallow(<Conferences />);
   });
 
   it('renders a header', () => {
-    const headers = mountedMyLocations.find('Header');
+    const headers = mountedConferences.find('Header');
     expect(headers.length).toBe(1);
   });
 
 
   it('renders a map', () => {
-    const maps = mountedMyLocations.find('Map');
+    const maps = mountedConferences.find('Map');
     expect(maps.length).toBe(1);
   })
 });
 
 describe('chooseMap', () => {
   it('updates this.state.currentMap using the city passed to it', () => {
-    let mountedMyLocations = shallow(<MyLocations />);
+    let mountedConferences = shallow(<Conferences />);
     let mockEvent = { target: { value: 'testland' } };
-    mountedMyLocations.instance().chooseMap(mockEvent);
-    expect(mountedMyLocations.instance().state.currentMap).toBe('testland.png');
+    mountedConferences.instance().chooseMap(mockEvent);
+    expect(mountedConferences.instance().state.currentMap).toBe('testland.png');
   })
 });

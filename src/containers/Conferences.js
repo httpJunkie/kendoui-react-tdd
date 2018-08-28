@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
-import Button from '../components/Button';
+import KendoButton from '../components/KendoButton';
 import ImageFrame from '../components/ImageFrame';
 import mapChooser from '../mapChooser';
 import axios from 'axios';
 
-class MyLocations extends Component {
+class Conferences extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentMap: 'none.png',
-      locations: []
+      conferences: []
     };
     this.chooseMap = this.chooseMap.bind(this);
   }
 
   async componentDidMount() {
-    let response = await axios.get('http://localhost:3000/data/locations.json');
+    let response = await axios.get('http://localhost:3000/data/conferences.json');
     this.setState({
-      locations: response.data.locations
+      conferences: response.data.conferences
     })
   }
 
@@ -27,20 +27,20 @@ class MyLocations extends Component {
   }
 
   render() {
-    let locationsLived = this.state.locations.map((location, id) => {
-      return (<Button handleClick={this.chooseMap} key={id} city={location.city} />)
+    let kendoButtonList = this.state.conferences.map((conference, id) => {
+      return (<KendoButton handleClick={this.chooseMap} key={id} city={conference.city} />)
     });
 
     return (
       <div>
         <Header />
         <div>
-          {locationsLived}
+          {kendoButtonList}
         </div>
-        <ImageFrame imagename={this.state.currentMap} location={this.props.location} />
+        {/* <ImageFrame imagename={this.state.currentMap} conference={this.props.conference} /> */}
       </div>
     );
   }
 }
 
-export default MyLocations;
+export default Conferences;

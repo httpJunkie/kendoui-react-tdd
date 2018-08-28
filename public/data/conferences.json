@@ -1,0 +1,79 @@
+{
+  "conferences": [
+    {
+      "name": "React in the Biggity O",
+      "city": "Oakland",
+      "date": "12-01-2018",
+      "venue" : "Oakland Convention Center",
+      "address": "550 10th St",
+      "zipcode": "94607",
+      "sessions": [
+        {
+          "title": "Yep, Uh huh, Nope.. The Keynote",
+          "speaker": "E-40",
+          "level": 100
+        },
+        {
+          "title": "Reactin to events on the streets",
+          "speaker": "Spice One",
+          "level": 400
+        },
+        {
+          "title": "React like a pimp",
+          "speaker": "Big Boi",
+          "level": 600
+        }
+      ]
+    },
+    {
+      "name": "Mission: React",
+      "city": "San Francisco",
+      "date": "11-11-2018",
+      "venue" : "Misson Bay Conference Center",
+      "address": "1675 Owens St #251",
+      "zipcode": "94158",
+      "sessions": [
+        {
+          "title": "Reactin Fortay",
+          "speaker": "Rappin 4Tay",
+          "level": 100
+        },
+        {
+          "title": "DOM in the Steep Streets",
+          "speaker": "San Quinn",
+          "level": 400
+        },
+        {
+          "title": "At the club, React expose",
+          "speaker": "Too Short",
+          "level": 600
+        }
+      ]
+    },
+    {
+      "name": "React Players Club",
+      "city": "Atlanta",
+      "date": "10-05-2018",
+      "venue" : "Georgia International Convention Center",
+      "address": "2000 Convention Center Concourse",
+      "zipcode": "30337",
+      "sessions": [
+        {
+          "title": "Slangin Keynotes",
+          "speaker": "Lord Infamous",
+          "level": 100
+        },
+        {
+          "title": "React like a pimp",
+          "speaker": "Big Boi",
+          "level": 300
+        },
+        {
+          "title": "React like a pimp",
+          "speaker": "Andre 3000",
+          "level": 400
+        }
+      ]
+    }
+  ]
+}

@@ -10,8 +10,8 @@ describe("App", function () {
 
   it('renders a MyLocations', () => {
     let mountedApp = shallow(<App />);
-    const locators = mountedApp.find('MyLocations');
-    expect(locators.length).toBe(1);
-  })
+    const myLocations = mountedApp.find('MyLocations');
+    expect(myLocations.length).toBe(1);
+  });
 
 });
