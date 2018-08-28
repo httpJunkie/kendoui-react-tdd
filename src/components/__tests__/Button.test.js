@@ -1,57 +1,57 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Button from '../Button';
+import KendoButton from '../KendoButton';
 
-describe("Button", function () {
-  let mountedButton;
+describe("KendoButton", function () {
+  let mountedKendoButton;
 
   beforeEach(() => {
-    mountedButton = shallow(<Button />);
+    mountedKendoButton = shallow(<KendoButton />);
   });
 
   it('renders without crashing', () => {
-    shallow(<Button />);
+    shallow(<KendoButton />);
   });
 
-  it('renders a button', () => {
+  it('renders a KendoButton', () => {
     const button = mountedButton.find('button');
     expect(button.length).toBe(1);
   });
 
   it('call a function passed to it when clicked', () => {
     const mockCallBack = jest.fn();
-    const mountedButtonWithCallback = shallow(<Button handleClick={mockCallBack} />);
-    mountedButtonWithCallback.find('button').simulate('click');
+    const mountedKendoButtonWithCallback = shallow(<KendoButton handleClick={mockCallBack} />);
+    mountedKendoButtonWithCallback.find('button').simulate('click');
     expect(mockCallBack.mock.calls.length).toEqual(1);
   });
 });
 
 describe("When a city is passed to it", () => {
-  let mountedButton;
+  let mountedKendoButton;
   let props;
 
   beforeEach(() => {
-    props = { city: "Cocoa Beach" };
-    mountedButton = shallow(<Button {...props} />);
+    props = { city: "San Francisco" };
+    mountedKendoButton = shallow(<KendoButton {...props} />);
   });
 
   it('displays the city', () => {
-    const locName = mountedButton.find('.city-button');
-    expect(locName.text()).toEqual('Cocoa Beach');
+    const locName = mountedKendoButton.find('.city-button');
+    expect(locName.text()).toEqual('San Francisco');
   });
 });
 
 describe("When a city is passed as undefined", () => {
-  let mountedButton;
+  let mountedKendoButton;
   let props;
 
   beforeEach(() => {
     props = { city: undefined };
-    mountedButton = shallow(<Button {...props} />);
+    mountedKendoButton = shallow(<KendoButton {...props} />);
   });
 
   it('displays the city', () => {
-    const locName = mountedButton.find('.city-button');
+    const locName = mountedKendoButton.find('.city-button');
     expect(locName.text()).toEqual('All cities');
   });
 

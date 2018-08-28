@@ -37,7 +37,7 @@ class Conferences extends Component {
         <div>
           {kendoButtonList}
         </div>
-        {/* <ImageFrame imagename={this.state.currentMap} conference={this.props.conference} /> */}
+        <ImageFrame imagename={this.state.currentMap} conference={this.props.conference} />
       </div>
     );
   }

@@ -2,7 +2,7 @@ function mapChooser(locationName){
     if (!locationName) {
         locationName = "none";
     }
-    let imageName = locationName + ".png";
+    let imageName = locationName + ".jpg";
     return (imageName);
 }
 
